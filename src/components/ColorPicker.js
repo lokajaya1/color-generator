@@ -1,15 +1,15 @@
-function ColorPicker({ onColorChange }) {
+import React from "react";
+
+const ColorPicker = ({ color, onColorChange }) => {
+  const handleChange = (event) => {
+    onColorChange(event.target.value);
+  };
+
   return (
-    <>
-      <div className="colorPicker">
-        <input
-          type="color"
-          id="colorPicker"
-          onChange={(e) => onColorChange(e.target.value)}
-        />
-      </div>
-    </>
+    <div>
+      <input type="color" value={color} onChange={handleChange} />
+    </div>
   );
-}
+};
 
 export default ColorPicker;
